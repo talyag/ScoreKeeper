@@ -12,6 +12,8 @@ public class MainActivity extends AppCompatActivity {
     private final static String PLAYER_ONE_SCORE = "player_one_score";
     private final static String PLAYER_TWO_SCORE = "player_two_score";
 
+    //initialize all player score variables
+
     int scorePlayerOne = 0;
     int scorePlayerTwo = 0;
     int roadTilesPlayerOne = 0;
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Checks for existing player scores. If < 0, restores instance state
+
         if (savedInstanceState != null) {
             scorePlayerOne = savedInstanceState.getInt(PLAYER_ONE_SCORE);
             scorePlayerTwo = savedInstanceState.getInt(PLAYER_TWO_SCORE);
@@ -33,7 +37,10 @@ public class MainActivity extends AppCompatActivity {
             displayForPlayerTwo(scorePlayerTwo);
 
         }
+
     }
+
+    //On destroy, saves instance state
 
     @Override
     protected void onSaveInstanceState(Bundle savedInstanceState) {
@@ -48,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
      * Displays the given score for Player 1.
      */
     public void displayForPlayerOne(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player_one_score);
+        TextView scoreView = findViewById(R.id.player_one_score);
         scoreView.setText(String.valueOf(score));
     }
 

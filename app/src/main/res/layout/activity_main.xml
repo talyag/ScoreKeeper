@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00b2ff"
+    android:background="@color/colorBackground"
     tools:context="com.example.android.scorekeeper.MainActivity">
 
     <!-- viewGroup for Player 1 and Player 2 score and buttons -->
@@ -25,21 +25,27 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/small_red_meeple" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center_horizontal"
-                android:padding="16dp"
-                android:text="@string/player_1"
-                android:textColor="#616161"
-                android:textSize="14sp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/small_red_meeple" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="32dp"
+                    android:text="@string/player_1"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp" />
+
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/player_one_score"
@@ -48,8 +54,17 @@
                 android:fontFamily="sans-serif-light"
                 android:gravity="center_horizontal"
                 android:text="@string/score_default"
-                android:textColor="#000000"
+                android:textColor="@android:color/black"
                 android:textSize="56sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_red"
+                android:gravity="center_horizontal"
+                android:text="@string/road"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,15 +72,9 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/road" />
-
                 <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
                     android:layout_marginRight="8dp"
                     android:onClick="minusRoadTilesPOne"
                     android:text="@string/minus" />
@@ -79,13 +88,22 @@
                     android:textSize="16sp" />
 
                 <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
                     android:layout_marginLeft="8dp"
                     android:onClick="plusRoadTilesPOne"
                     android:text="@string/plus" />
 
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_red"
+                android:gravity="center_horizontal"
+                android:text="@string/city"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -93,15 +111,9 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/city" />
-
                 <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
                     android:layout_marginRight="8dp"
                     android:onClick="minusCityTilesPOne"
                     android:text="@string/minus" />
@@ -115,13 +127,22 @@
                     android:textSize="16sp" />
 
                 <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
                     android:layout_marginLeft="8dp"
                     android:onClick="plusCityTilesPOne"
                     android:text="@string/plus" />
 
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_red"
+                android:gravity="center_horizontal"
+                android:text="@string/cloister"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -129,15 +150,9 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/cloister" />
-
                 <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
                     android:layout_marginRight="8dp"
                     android:onClick="minusCloisterTilesPOne"
                     android:text="@string/minus" />
@@ -151,8 +166,8 @@
                     android:textSize="16sp" />
 
                 <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
                     android:layout_marginLeft="8dp"
                     android:onClick="plusCloisterTilesPOne"
                     android:text="@string/plus" />
@@ -182,21 +197,27 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/small_green_meeple" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center_horizontal"
-                android:padding="16dp"
-                android:text="@string/player_2"
-                android:textColor="#616161"
-                android:textSize="14sp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/small_green_meeple" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="32dp"
+                    android:text="@string/player_2"
+                    android:textColor="#000000"
+                    android:textSize="24sp" />
+
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/player_two_score"
@@ -208,21 +229,25 @@
                 android:textColor="#000000"
                 android:textSize="56sp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_green"
+                android:gravity="center_horizontal"
+                android:text="@string/road"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/road" />
 
                 <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
                     android:layout_marginRight="8dp"
                     android:onClick="minusRoadTilesPTwo"
                     android:text="@string/minus" />
@@ -236,13 +261,23 @@
                     android:textSize="16sp" />
 
                 <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
                     android:layout_marginLeft="8dp"
                     android:onClick="plusRoadTilesPTwo"
                     android:text="@string/plus" />
 
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_green"
+                android:gravity="center_horizontal"
+                android:text="@string/city"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -250,15 +285,9 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/city" />
-
                 <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
                     android:layout_marginRight="8dp"
                     android:onClick="minusCityTilesPTwo"
                     android:text="@string/minus" />
@@ -272,13 +301,22 @@
                     android:textSize="16sp" />
 
                 <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
                     android:layout_marginLeft="8dp"
                     android:onClick="plusCityTilesPTwo"
                     android:text="@string/plus" />
 
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_green"
+                android:gravity="center_horizontal"
+                android:text="@string/cloister"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -286,15 +324,9 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/cloister" />
-
                 <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
                     android:layout_marginRight="8dp"
                     android:onClick="minusCloisterTilesPTwo"
                     android:text="@string/minus" />
@@ -308,8 +340,8 @@
                     android:textSize="16sp" />
 
                 <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="@dimen/button"
+                    android:layout_height="@dimen/button"
                     android:layout_marginLeft="8dp"
                     android:onClick="plusCloisterTilesPTwo"
                     android:text="@string/plus" />
